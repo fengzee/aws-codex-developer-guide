@@ -90,6 +90,14 @@ Caddy can receive HTTPS traffic and forward it to the correct app container. The
 
 DNS maps a domain name to a target like an IP address or load balancer. Route 53 is AWS's DNS service. DNS changes can take time to propagate, and mistakes can make a site unreachable.
 
+### Registrar and Nameserver Delegation
+
+A registrar is where the user buys and renews a domain. Route 53 can manage DNS only after the domain's registrar points the domain at Route 53's nameservers. For beginners, explain that buying a domain and managing DNS are related but separate jobs.
+
+### ICP Filing
+
+ICP filing is a mainland China website compliance workflow that can apply when a site is hosted on mainland China infrastructure. For a first overseas-hosted project, avoid turning this into a legal deep dive; explain that mainland hosting is a separate planning track and should not be assumed.
+
 ### S3
 
 S3 stores objects such as deployment bundles, backups, and static files. Buckets and prefixes need ownership rules and lifecycle policies. Avoid bucket-wide cleanup unless the bucket exists only for that one purpose.

@@ -5,6 +5,7 @@
 它会帮助 Codex 引导你完成：
 
 - AWS 账号和 Codex 访问方式配置
+- 购买域名，并配置为由 Route 53 管理 DNS
 - 边做边解释 AWS、服务器、Docker、GitHub、测试和部署等概念
 - GitHub、分支、提交和验证流程
 - 分层 `AGENTS.md` 与项目文档维护
@@ -49,6 +50,7 @@ https://github.com/fengzee/aws-codex-developer-guide
 8. 帮我建立 GitHub、分支、自动提交、验证命令等开发流程。
 9. 帮我维护分层 AGENTS.md、docs 文档和 Codebase-Memory MCP 规则。
 10. 只有确实需要时，再规划 EC2、Docker、Caddy、Route 53、S3、Terraform、SSM 等 AWS 资源。
+11. 如果我没有域名，请主动带我选择并购买一个中国境外域名商的域名，再配置给 Route 53 管理；我在中国大陆，除非我明确需要境内合规，请优先建议 AWS 韩国区、新加坡等离中国较近的境外区域。
 
 请先从环境检查和最少必要问题开始。
 ```

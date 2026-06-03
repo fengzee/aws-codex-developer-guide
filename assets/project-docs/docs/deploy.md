@@ -15,7 +15,9 @@ Record non-secret resource facts only.
 | --- | --- | --- | --- |
 | EC2 instance | `<project>` | `<purpose>` | `<command>` |
 | Security group | `<project>` | `<ports>` | `<command>` |
-| Route 53 record | `<project>` | `<domain>` | `<command>` |
+| Domain registrar | `<project>` | `<registrar and renewal owner>` | `<login/check manually; no secrets in docs>` |
+| Route 53 hosted zone | `<project>` | `<domain>` | `nslookup -type=NS <domain>` |
+| Route 53 record | `<project>` | `<record name/type>` | `<command>` |
 | S3 prefix/bucket | `<project>` | `<deploy/backups>` | `<command>` |
 
 ## Preflight

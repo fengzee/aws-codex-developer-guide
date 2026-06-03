@@ -15,6 +15,8 @@ Use this reference when a task touches AWS account setup, IAM, CLI access, EC2, 
 ## Account Bootstrap
 
 1. Confirm the user's target AWS account and region.
+   - For a mainland China beginner without a mainland compliance requirement, suggest starting with a global AWS account in a nearby non-mainland Region such as Seoul (`ap-northeast-2`) or Singapore (`ap-southeast-1`), then test latency.
+   - Load `references/domain-and-region.md` if the user has no domain, mentions China, or needs DNS/Route 53 decisions.
 2. Secure root access and confirm MFA status.
 3. Create a human admin path:
    - Preferred: IAM Identity Center user or federated identity with administrator permission set during bootstrap.
@@ -33,6 +35,7 @@ aws --profile <profile-name> --region <region> sts get-caller-identity
 For a small personal or early-stage project, a simple baseline is often enough:
 
 - One AWS region chosen deliberately for user proximity, data residency, and cost.
+- For mainland China users, avoid AWS China Regions unless they explicitly need mainland hosting/compliance and understand the separate account and filing workflow.
 - Terraform as the source of truth for IAM, VPC/security group, EC2, EIP if needed, Route 53, S3, and lifecycle policies.
 - One EC2 host for small workloads, with an instance role that allows SSM management and only required AWS API calls.
 - Docker Compose per project, with explicit project names, service names, named volumes, and log rotation.

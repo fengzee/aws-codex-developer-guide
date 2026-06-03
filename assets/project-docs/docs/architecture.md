@@ -17,6 +17,7 @@
 - Local development: `<commands and ports>`
 - Production: `<AWS account, region, host/container/service model>`
 - Domains: `<domain names or none>`
+- Domain/DNS model: `<registrar + Route 53 hosted zone + key records>`
 - Authentication: `<auth model>`
 
 ## Data Model

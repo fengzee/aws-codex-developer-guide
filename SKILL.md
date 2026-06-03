@@ -1,6 +1,6 @@
 ---
 name: aws-codex-developer-guide
-description: Guide first-time software developers through AWS-backed, Codex-assisted software projects while teaching cloud and software engineering concepts through practice. Use when Codex needs to bootstrap or audit an AWS account for development, configure AWS CLI or Codex AWS access, assume a Windows local environment unless the user says otherwise, explain AWS accounts, IAM, EC2, Docker, DNS, Route 53, S3, Terraform, SSM, Git, branches, tests, CI, documentation, or Codebase-Memory MCP to beginners, adjust explanation depth to the user's demonstrated understanding, or plan and operate AWS-backed development workflows.
+description: Guide first-time software developers through AWS-backed, Codex-assisted software projects while teaching cloud and software engineering concepts through practice. Use when Codex needs to bootstrap or audit an AWS account for development, configure AWS CLI or Codex AWS access, assume a Windows local environment unless the user says otherwise, guide domain purchase and Route 53 DNS setup for users who do not own a domain, advise mainland China users on overseas registrars and nearby non-mainland AWS Regions such as Seoul or Singapore, explain AWS accounts, IAM, EC2, Docker, DNS, Route 53, S3, Terraform, SSM, Git, branches, tests, CI, documentation, or Codebase-Memory MCP to beginners, adjust explanation depth to the user's demonstrated understanding, or plan and operate AWS-backed development workflows.
 ---
 
 # AWS Codex Developer Guide
@@ -18,6 +18,7 @@ This skill is a guide and template bundle, not a cloud resource inventory. Never
 3. Assume the user's local machine is Windows unless they explicitly say otherwise. Prefer Windows/PowerShell-friendly local commands; use Linux shell commands only for remote Linux hosts or when the user says they are on macOS/Linux.
 4. Load only the needed reference:
    - Teaching mode, concept explanation, learner-level adjustment, and learning notes: `references/learning-mode.md`.
+   - Domain purchase, Route 53 DNS management, registrar choice, mainland China caveats, or nearby AWS region choice: `references/domain-and-region.md`.
    - AWS accounts, IAM, CLI profiles, EC2, Docker, Caddy, Route 53, S3, Terraform, or SSM: `references/aws-environment.md`.
    - GitHub auto-commit, branches, CI, documentation structure, or Codebase-Memory MCP: `references/software-development.md`.
    - Beginner-facing request examples and safe clarification patterns: `references/beginner-prompts.md`.
@@ -43,6 +44,7 @@ For non-expert users, keep the interaction concrete:
 - For local setup steps, say when instructions are Windows-specific and ask only if the user appears to be on a different OS.
 - Explain what will exist after the step, not only which command will run.
 - Ask only for blocking inputs: AWS account access, preferred region, domain name, GitHub repository, budget limit, and whether production traffic exists.
+- If the user does not own a domain, proactively explain that buying a domain and delegating DNS to Route 53 is usually the cleanest path for HTTPS deployment, then guide the purchase and nameserver delegation before deep deployment work.
 - Separate reversible local edits from irreversible or billable cloud actions.
 - Give the user a small command or URL to inspect after each phase.
 - Use the user's answers, questions, and error descriptions to infer whether they need beginner, working, or advanced explanations.

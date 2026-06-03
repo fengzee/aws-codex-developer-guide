@@ -19,6 +19,10 @@ Use $aws-codex-developer-guide to configure Codex AWS CLI access on this Windows
 Use $aws-codex-developer-guide to plan a simple EC2 + Docker + Caddy + Route 53 deployment for <domain>. Create docs and Terraform placeholders, but do not apply live AWS changes until I confirm.
 ```
 
+```text
+Use $aws-codex-developer-guide to help me buy a domain and configure it so Route 53 manages DNS. I am in mainland China, do not already own a domain, and prefer a simple overseas setup unless there is a strong reason to use mainland China hosting.
+```
+
 ## Project Setup Prompts
 
 ```text
@@ -56,7 +60,8 @@ Use $aws-codex-developer-guide to clean up unused AWS resources. Start with an i
 Ask only what blocks safe progress:
 
 - Which AWS account and region should be used?
-- Do you already own the domain or should we defer DNS?
+- Do you already own a domain? If not, should we choose and buy one before production HTTPS deployment?
+- Are you in mainland China, and do you need mainland China hosting/compliance, or is an overseas Region such as Seoul or Singapore acceptable?
 - Is this production traffic or a new test environment?
 - What monthly budget range should the plan stay within?
 - Should Codex commit verified changes automatically on feature branches?
