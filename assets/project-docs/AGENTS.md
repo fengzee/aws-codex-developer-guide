@@ -11,6 +11,7 @@ This file is the entry point for Codex and other automation collaborators. Keep 
    - Deployment and cloud resources: `docs/deploy.md`
    - Operations, backups, monitoring, incidents: `docs/operations.md`
    - Recent execution history: `docs/worklog.md`
+   - Beginner learning progress, if present: `docs/learning-notes.md`
 
 ## Project Snapshot
 
@@ -18,7 +19,8 @@ This file is the entry point for Codex and other automation collaborators. Keep 
 - Purpose: `<one-sentence-purpose>`
 - Primary stack: `<language/framework/database>`
 - Production environment: `<none|AWS region/account/profile/domain>`
-- Default verification command: `<make verify|npm test|...>`
+- Default local OS assumption: Windows/PowerShell unless the owner documents otherwise.
+- Default verification command: `<pwsh ./scripts/verify.ps1|npm test|pytest|make verify|...>`
 
 ## Codebase-Memory MCP
 
@@ -39,8 +41,8 @@ Fall back to `rg` or file search for string literals, error messages, config val
 - Do not commit `.env`, AWS credentials, Terraform state, deployment bundles, database dumps, private keys, or production logs.
 - Before live AWS changes, confirm identity with:
 
-```bash
-AWS_PROFILE=<profile-name> AWS_REGION=<region> aws sts get-caller-identity
+```powershell
+aws --profile <profile-name> --region <region> sts get-caller-identity
 ```
 
 - For production hosts, prefer SSM over SSH and keep Docker, S3, Route 53, and cleanup commands scoped to this project.
@@ -59,3 +61,4 @@ AWS_PROFILE=<profile-name> AWS_REGION=<region> aws sts get-caller-identity
 - New deploy, AWS, backup, or rollback behavior: update `docs/deploy.md` and `docs/operations.md`.
 - Completed operational work: append `docs/worklog.md` with commands and results.
 - New configuration value: update `.env.example`.
+- If the owner is learning through Codex, update `docs/learning-notes.md` when their explanation preference or covered concepts change.

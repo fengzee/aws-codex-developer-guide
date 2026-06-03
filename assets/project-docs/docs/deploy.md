@@ -20,9 +20,9 @@ Record non-secret resource facts only.
 
 ## Preflight
 
-```bash
+```powershell
 <verification-command>
-AWS_PROFILE=<profile> AWS_REGION=<region> aws sts get-caller-identity
+aws --profile <profile> --region <region> sts get-caller-identity
 terraform -chdir=<terraform-dir> fmt -check
 terraform -chdir=<terraform-dir> validate
 terraform -chdir=<terraform-dir> plan
@@ -38,8 +38,8 @@ terraform -chdir=<terraform-dir> plan
 
 ## Health Checks
 
-```bash
-curl -I https://<domain>/healthz
+```powershell
+curl.exe -I https://<domain>/healthz
 docker compose -f <compose-file> --project-name <project> ps
 docker compose -f <compose-file> --project-name <project> logs --tail=200 <service>
 ```

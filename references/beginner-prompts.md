@@ -2,14 +2,17 @@
 
 Use this reference when helping a user who does not know what to ask for.
 
+When the user wants to learn while building, also load `references/learning-mode.md`.
+Assume the user's local machine is Windows unless they explicitly say otherwise.
+
 ## AWS Setup Prompts
 
 ```text
-Use $aws-codex-developer-guide to help me set up a new AWS account for a small web app. I own the account, I want the region to be <region>, and my budget ceiling is <amount>. Explain each billable or security-sensitive step before doing it.
+Use $aws-codex-developer-guide to help me set up a new AWS account for a small web app. I use Windows unless I say otherwise. I own the account, I want the region to be <region>, and my budget ceiling is <amount>. Explain each billable or security-sensitive step before doing it, and teach me the related AWS concepts as we go.
 ```
 
 ```text
-Use $aws-codex-developer-guide to configure Codex AWS CLI access on this machine. I want a named profile, no secrets in chat or git, and a verification command that proves the profile works.
+Use $aws-codex-developer-guide to configure Codex AWS CLI access on this Windows machine. I want a named profile, no secrets in chat or git, and a verification command that proves the profile works. Explain what AWS accounts, IAM, profiles, and permissions mean in beginner language.
 ```
 
 ```text
@@ -20,6 +23,10 @@ Use $aws-codex-developer-guide to plan a simple EC2 + Docker + Caddy + Route 53 
 
 ```text
 Use $aws-codex-developer-guide to turn this folder into a reliable Codex-operated project. Add AGENTS.md, docs, .env.example, verification commands, and branch/commit rules.
+```
+
+```text
+Use $aws-codex-developer-guide to help me learn software engineering by building this project. Explain Git, branches, commits, tests, CI, documentation, and deployment concepts only when they become relevant to the task.
 ```
 
 ```text

@@ -1,4 +1,4 @@
 interface:
   display_name: "AWS Codex Developer Guide"
-  short_description: "Guide Codex through AWS-backed development"
-  default_prompt: "Use $aws-codex-developer-guide to set up my AWS/Codex development environment and establish reliable project workflows."
+  short_description: "Teach AWS-backed development with Codex"
+  default_prompt: "Use $aws-codex-developer-guide to set up my AWS/Codex development environment on Windows by default, explain each concept, and establish reliable project workflows."

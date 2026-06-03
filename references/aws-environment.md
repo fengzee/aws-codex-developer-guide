@@ -5,6 +5,7 @@ Use this reference when a task touches AWS account setup, IAM, CLI access, EC2, 
 ## Baseline Principles
 
 - The user's AWS account is their environment. Do not reuse private example resource names, domains, public IPs, hosted zones, buckets, instance IDs, or account IDs.
+- Assume the user's local computer is Windows unless they explicitly say otherwise. Use Windows/PowerShell-friendly local commands by default; use Linux shell syntax only for remote EC2 commands or when the user says they are on macOS/Linux.
 - Secure the root user first: strong password, MFA or passkey/security key where available, no root access keys, and minimal root-user use.
 - Prefer temporary credentials for humans and workloads. Use IAM Identity Center or role assumption where practical.
 - A dedicated IAM user with long-lived access keys can be acceptable for local Codex bootstrap only when the user understands the tradeoff. Keep it local, name it clearly, grant only the permissions needed as the project matures, rotate keys, and remove it if a role or Identity Center flow replaces it.
@@ -20,9 +21,9 @@ Use this reference when a task touches AWS account setup, IAM, CLI access, EC2, 
    - Simpler local automation path: a dedicated IAM user such as `codex-admin` with `AdministratorAccess` only for bootstrap, then reduce permissions.
 4. Configure the AWS CLI profile locally:
 
-```bash
+```powershell
 aws configure --profile <profile-name>
-AWS_PROFILE=<profile-name> AWS_REGION=<region> aws sts get-caller-identity
+aws --profile <profile-name> --region <region> sts get-caller-identity
 ```
 
 5. Record only non-secret values in docs: profile name, default region, account alias, resource naming convention, and how to verify identity.
@@ -51,7 +52,7 @@ When multiple apps share one EC2:
 - Attach services to an explicit external Docker network only when cross-compose routing is needed.
 - Run only scoped Docker commands:
 
-```bash
+```powershell
 docker compose -f <compose-file> --project-name <project> ps
 docker compose -f <compose-file> --project-name <project> up -d <service>
 docker compose -f <compose-file> --project-name <project> logs --tail=200 <service>
@@ -64,7 +65,7 @@ docker compose -f <compose-file> --project-name <project> logs --tail=200 <servi
 
 Before applying infrastructure changes:
 
-```bash
+```powershell
 terraform fmt -check
 terraform validate
 terraform plan
@@ -88,8 +89,8 @@ Minimum flow:
 
 1. Confirm identity:
 
-```bash
-AWS_PROFILE=<profile-name> AWS_REGION=<region> aws sts get-caller-identity
+```powershell
+aws --profile <profile-name> --region <region> sts get-caller-identity
 ```
 
 2. Resolve the instance ID from Terraform output, tags, or explicit config.

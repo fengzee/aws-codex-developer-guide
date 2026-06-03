@@ -5,6 +5,7 @@
 它会帮助 Codex 引导你完成：
 
 - AWS 账号和 Codex 访问方式配置
+- 边做边解释 AWS、服务器、Docker、GitHub、测试和部署等概念
 - GitHub、分支、提交和验证流程
 - 分层 `AGENTS.md` 与项目文档维护
 - Codebase-Memory MCP 使用规则
@@ -40,11 +41,14 @@ https://github.com/fengzee/aws-codex-developer-guide
 
 1. 不要让我把密码、Access Key、Token 等秘密信息粘贴到聊天里。
 2. 涉及花钱、开服务器、改 DNS、创建管理员权限、部署线上服务前，先解释影响并等我确认。
-3. 先检查我电脑和项目当前状态，再只问必要问题。
-4. 帮我配置 Codex 可用的 AWS 访问方式。
-5. 帮我建立 GitHub、分支、自动提交、验证命令等开发流程。
-6. 帮我维护分层 AGENTS.md、docs 文档和 Codebase-Memory MCP 规则。
-7. 只有确实需要时，再规划 EC2、Docker、Caddy、Route 53、S3、Terraform、SSM 等 AWS 资源。
+3. 请先默认我使用 Windows 系统；除非我明确说明不是 Windows，本地命令和说明都按 Windows 来。
+4. 先检查我电脑和项目当前状态，再只问必要问题。
+5. 每遇到一个重要概念，请用简短中文解释它是什么、为什么现在需要它、我应该如何判断它是否配置成功。
+6. 根据我的提问和回答，判断我对 AWS、GitHub、服务器、Docker、测试、部署、文档这些概念的掌握程度，并自动调整讲解深度。
+7. 帮我配置 Codex 可用的 AWS 访问方式。
+8. 帮我建立 GitHub、分支、自动提交、验证命令等开发流程。
+9. 帮我维护分层 AGENTS.md、docs 文档和 Codebase-Memory MCP 规则。
+10. 只有确实需要时，再规划 EC2、Docker、Caddy、Route 53、S3、Terraform、SSM 等 AWS 资源。
 
 请先从环境检查和最少必要问题开始。
 ```

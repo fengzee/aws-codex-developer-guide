@@ -7,11 +7,13 @@ Use this reference for GitHub, branches, auto-commit, CI, documentation, Codebas
 Every project should have:
 
 - A git repository with a clean default branch.
+- Local setup instructions that assume Windows/PowerShell unless the owner documents another OS.
 - A root `AGENTS.md` that defines context loading, hard rules, verification commands, and documentation expectations.
 - Directory-level `AGENTS.md` files for areas with local constraints, such as infrastructure, deployment, backend, frontend, scripts, data, or docs.
 - `docs/architecture.md`, `docs/deploy.md`, `docs/operations.md`, and `docs/worklog.md` when the project has cloud resources or persistent operational state.
+- Optional `docs/learning-notes.md` when the user wants Codex to teach and track concepts during a long beginner onboarding.
 - `.env.example` and infrastructure variable examples with non-secret placeholder values.
-- A single verification entry point such as `make verify`, `npm test`, or `just check`.
+- A single verification entry point such as `pwsh ./scripts/verify.ps1`, `npm test`, `pytest`, or `make verify`.
 
 ## Branch Management
 
@@ -66,6 +68,7 @@ Use documentation as the durable memory of the project.
 | `docs/deploy.md` | Deployment flow, environments, AWS resources, rollback |
 | `docs/operations.md` | Routine maintenance, backups, monitoring, incident steps |
 | `docs/worklog.md` | Executed work, verification results, temporary observations |
+| `docs/learning-notes.md` | Optional beginner learning progress and explanation preferences |
 | `.env.example` | Non-secret configuration contract |
 
 Do not duplicate long rules across many files. Put the canonical version in the most specific stable document and point to it from indexes.
@@ -80,6 +83,7 @@ Do not duplicate long rules across many files. Put the canonical version in the 
 | New deployment, backup, or AWS resource | deploy docs, operations docs, `AGENTS.md` if it creates a rule |
 | New invariant every future agent must obey | nearest `AGENTS.md`, root `AGENTS.md` if project-wide |
 | Completed operational work | `docs/worklog.md` |
+| Beginner learning preference or concept progress | `docs/learning-notes.md` if present |
 
 ## Codebase-Memory MCP
 
@@ -107,8 +111,8 @@ Indexing and persistence are project decisions. If sharing graph artifacts in gi
 
 Provide one high-signal command:
 
-```bash
-make verify
+```powershell
+pwsh ./scripts/verify.ps1
 ```
 
 It should run the project's equivalent of:
@@ -124,6 +128,8 @@ Optional hooks:
 - `pre-push`: full verification.
 
 Do not let hooks become the only documented validation path. Codex needs an explicit command it can run and report.
+
+When documenting commands for beginners, include Windows/PowerShell-safe examples first. If the same project also runs on macOS/Linux, add those only as secondary alternatives.
 
 ## Official Sources
 
