@@ -10,13 +10,28 @@
 - Codebase-Memory MCP 使用规则
 - 必要时规划 EC2、Docker、Caddy、Route 53、S3、Terraform、SSM 等 AWS 资源
 
-## 使用方式
+## 使用方式：两步，开两个 Codex 对话
 
-在 Codex 中安装这个 Skill：
+### 第一步：安装 Skill
+
+新开一个 Codex 对话，把下面这句话发给 Codex：
+
+```text
+请帮我安装这个 Codex Skill：
 
 https://github.com/fengzee/aws-codex-developer-guide
+```
 
-安装后，新开一个 Codex 对话，复制下面这段：
+等 Codex 告诉你安装完成后，结束这个对话。
+
+### 第二步：开始配置和开发
+
+再新开一个 Codex 对话：
+
+- 如果已经有项目，就在项目文件夹里打开 Codex。
+- 如果还没有项目，就先在一个空文件夹里打开 Codex。
+
+然后把下面这段发给 Codex：
 
 ```text
 使用 $aws-codex-developer-guide 帮我从零建立 AWS + Codex 软件开发环境。
@@ -33,5 +48,3 @@ https://github.com/fengzee/aws-codex-developer-guide
 
 请先从环境检查和最少必要问题开始。
 ```
-
-如果已经有项目，就在项目文件夹里打开 Codex；如果还没有项目，就先在一个空文件夹里打开 Codex。
